@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_translation/app/modules/details/controllers/details_controller.dart';
 
-class DetailsView extends GetView<DetailsController> {
+class DetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

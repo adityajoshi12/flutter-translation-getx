@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_translation/app/modules/details/bindings/details_binding.dart';
-import 'package:getx_translation/app/modules/details/views/details_view.dart';
+import 'package:getx_translation/app/modules/details_view.dart';
 import 'package:getx_translation/app/modules/home/bindings/home_binding.dart';
 import 'package:getx_translation/app/modules/home/views/home_view.dart';
 
@@ -19,8 +18,15 @@ class RouteGenerator {
       case Routes.DETAILS:
         return GetPageRoute(
           page: () => DetailsView(),
-          binding: DetailsBinding(),
           transition: Transition.fade,
+        );
+      default:
+        return GetPageRoute(
+          page: () => Scaffold(
+            body: Center(
+              child: Text('No path for ${settings.name}'),
+            ),
+          ),
         );
     }
   }
